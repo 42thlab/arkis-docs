@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: Arkis Documentation
+site_author: ContainerHQ, Inc
+repo_url: http://github.com/42thlab/arkis-docs
+copyright: ContainerHQ, Inc - All rights reserved
+theme: bootstrap

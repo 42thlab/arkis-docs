@@ -1,12 +1,12 @@
 # Introduction
 
-Arkis currently offers a **HTTP REST API** wich is used by the Web UI. In this
+**Arkis** currently offers a **HTTP REST API** wich is used by the Web UI. In this
 document you will find all API operations currently supported in the service
 and examples on how to execute them.
 
 ## Docker API
 
-*Arkis* is fully compatible with both
+**Arkis** is fully compatible with both
 [Docker API](https://docs.docker.com/reference/api/docker_remote_api/) and
 [Docker Swarm API](http://docs.docker.com/swarm/API/).
 
