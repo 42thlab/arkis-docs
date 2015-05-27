@@ -1,6 +1,6 @@
-# Tags
+# Labels
 
-Tags are key/value pairs associated to particular nodes.
+Labels are key/value pairs associated to particular nodes.
 
 When creating a container, the user can select a subset of nodes that should
 be considered for scheduling by specifying one or more sets of matching
@@ -14,3 +14,19 @@ containers on specific hardware).
 containers to run on a given location).
 - Logical cluster partitioning (`environment=production`, to split a cluster into
 sub-clusters with different properties).
+
+See [Docker Swarm Filters](https://docs.docker.com/swarm/scheduler/filter/)
+
+>N.B. Caution: Labels can't be updated when the node is already deployed!
+
+## Official Labels
+
+**Arkis** is taking care of specifying the following list of labels:
+
+- `storage`
+- `region`
+- `memory`
+- `cpu`
+- `disk`
+
+**This labels are reserved and therefore can't be provided by the user.**
