@@ -5,8 +5,8 @@ can be deployed.
 
 Attribute   | Description
 ----------- | -----------
-uuid        | A unique identifier for the node generated automatically on creation
-cluster     | The cluster UUID of which the node belongs
+id        | A unique identifier (UUID) for the node generated automatically on creation
+cluster_id  | The cluster UUID of which the node belongs
 name        | A user provided name for the node (see [Regions](/api/regions/))
 labels      | A list of labels to identify the node when running containers (see [Labels](/api/labels/))
 state       | The state of the node. See the below table for a list of possible states
@@ -36,7 +36,7 @@ Parameter   | Description
 ---------   | -----------
 name        | Filter by name
 state       | Filter by state
-cluster     | Filter by cluster UUID
+cluster_id  | Filter by cluster UUID
 region      | Filter by region
 node_size   | Filter by node size
 labels      | Filter by a list of labels (e.g. `[{ "region": "us-east", "environment": "production" }]`)
@@ -55,7 +55,7 @@ Creates a new node.
 
 Parameter | Description
 --------- | -----------
-cluster  | (required) Cluster UUID to which the newly created node will belong
+cluster_id  | (required) Cluster UUID to which the newly created node will belong
 name | (required) Name of the node
 region | (required) The name identifier of the region where the node will be deployed (see [Regions](/api/regions))
 node_size | (required) Name identifier of the node size object desired for the node (see [Node Sizes](/api/node_sizes))
@@ -67,13 +67,13 @@ Get all the informations of a specific node.
 
 ### HTTP Request
 
-`GET /api/v1/node/:uuid/`
+`GET /api/v1/node/:id/`
 
 ### Query Parameters
 
 Parameter | Description
 --------- | -----------
-uuid | The UUID of the node to retrieve
+id | The UUID of the node to retrieve
 
 ## Destroy a cluster
 
@@ -81,10 +81,10 @@ Remove a node from the cluster and destroy the node itself. This is irreversible
 
 ### HTTP Request
 
-`DELETE /api/v1/node/:uuid/`
+`DELETE /api/v1/node/:id/`
 
 ### Query Parameters
 
 Parameter | Description
 --------- | -----------
-uuid | The UUID of the node to retrieve
+id | The UUID of the node to retrieve

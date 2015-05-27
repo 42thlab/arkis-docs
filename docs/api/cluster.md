@@ -6,14 +6,14 @@ A cluster is a group of nodes wich are on the same private network.
 
 Attribute   | Description
 ----------- | -----------
-uuid        | A unique identifier for the cluster generated automatically on creation
+id          | A unique identifier (UUID) for the cluster generated automatically on creation
 name        | A user provided name for the cluster
 token       | Token key to reach the cluster
 strategy    | Strategy for ranking the node (see [Strategies](https://docs.docker.com/swarm/scheduler/strategy/))
 nodes_count | The number of containers present in the cluster
+node_ids    | A list of resource UUID of `Node` objects present in the cluster
 containers_count | The number of containers present in the cluster
-nodes       | A list of resource UUID of `Node` objects present in the cluster
-deployed_at | The date and time when this cluster was deployed
+created_at  | The date and time when this cluster was created
 updated_at  | The date and time when this cluster was updated last
 
 ## List all clusters
@@ -55,7 +55,7 @@ Get all the informations of a specific cluster.
 
 ### HTTP Request
 
-`GET /api/v1/cluster/:uuid/`
+`GET /api/v1/cluster/:id/`
 
 ### Query Parameters
 
@@ -69,7 +69,7 @@ Destroy all the nodes in a cluster and the cluster itself. This is irreversible.
 
 ### HTTP Request
 
-`DELETE /api/v1/cluster/:uuid/`
+`DELETE /api/v1/cluster/:id/`
 
 ### Query Parameters
 
