@@ -15,13 +15,24 @@ containers to run on a given location).
 - Logical cluster partitioning (`environment=production`, to split a cluster into
 sub-clusters with different properties).
 
-See [Docker Swarm Filters](https://docs.docker.com/swarm/scheduler/filter/)
+See [Docker Swarm Filters](https://docs.docker.com/swarm/scheduler/filter/).
 
->N.B. Caution: Labels can't be updated when the node is already deployed!
+>**Caution!** Labels can't be updated when the node is already deployed!
+
+## Label Object
+
+A label object is represented as a simple json object:
+
+```json
+{
+    "environment": "production",
+    "project": "my_app"
+}
+```
 
 ## Official Labels
 
-**Arkis** is taking care of specifying the following list of labels:
+**Arkis** is taking care of specifying the following of labels:
 
 - `storage`
 - `region`

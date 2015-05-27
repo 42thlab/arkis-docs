@@ -1,5 +1,14 @@
 site_name: Arkis Documentation
 site_author: ContainerHQ, Inc
+site_url: '/'
+
 repo_url: http://github.com/42thlab/arkis-docs
-copyright: ContainerHQ, Inc - All rights reserved
+
+copyright: Copyright &copy; ContainerHQ, Inc
+
 theme: bootstrap
+
+dev_addr: '0.0.0.0:8000'
+
+pages:
+- ['api/index.md', 'API', 'Introduction']

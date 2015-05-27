@@ -7,11 +7,13 @@ region.
 
 Attribute | Description
 --------- | -----------
-name | An identifier for the node size
+name | An name identifier for the node size
 label | A user-friendly name for the node size
-region | Region name identifier
-available | Whether the region is currently available for new deployments
-node_sizes | A list of node sizes UUID available in the region
+cpu  | Number of CPU's core
+disk | Storage size in GB
+memory | Memory in MB
+regions | A list of regions name identifier where the node can currently be deployed (see [Regions](/api/regions/))
+available | Whether the node size is currently available for new deployments
 
 ## List all node sizes
 
@@ -26,7 +28,21 @@ List all node sizes currently supported. Returns a list of `NodeSize` objects.
 Parameter | Description
 --------- | -----------
 name | Filter by node type name
-region | Filter by region identifier
+regions | Filter by regions name identifier currently available
 available | Filter by availability (`true`/`false`)
 limit | Limits the number of returned objects (by defauts returns all records)
 page | Returns one page of records at a time (by default, sets the `limit` parameter to 10)
+
+## Get an existing node size
+
+Get all informations of a specific node size.
+
+### HTTP Request
+
+`GET /api/v1/nodesize/:name/`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+name | The name identifier of the node size to retrieve

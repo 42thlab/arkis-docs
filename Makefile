@@ -18,6 +18,7 @@ build:
 dev: clean build
 	docker run \
 	-p $(PORT):8000 \
+	-v $(PWD):/$(project_name) \
 	--name $(project_name) \
 	-ti $(image_name) $(CMD)
 
