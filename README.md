@@ -15,34 +15,34 @@ This documentation is built using [MkDocs](http://www.mkdocs.org/).
 If you want to preview a live version of this documentation, all you need
 is [Docker](http://www.docker.com) and [Make](http://www.gnu.org/software/make/).
 
-Run the documentation server inside a container:
+### Run the documentation server inside a container:
 
     make
 
-Clean the container:
+### Clean the container:
 
     make clean
 
-Rebuild and restart the documentation server:
+### Rebuild and restart the documentation server:
 
     make re
 
-Run a live reload development environment:
+### Run a live reload development environment:
 
     make dev
 
-To open a shell in this development environment:
+### To open a shell in this development environment:
 
     CMD=/bin/bash make dev
 
-The documentation should be running on your Docker host and available at:
+### The documentation should be running on your Docker host and available at:
 
     http://$(your-docker-ip):$PORT
 
 You can run the documentation server on another port of your Docker host
 by specifying the environment variable `PORT` (default: `8000`).
 
-To deploy the application on [GitHub Pages](https://pages.github.com/):
+### To deploy the application on [GitHub Pages](https://pages.github.com/):
 
     make deploy
 
