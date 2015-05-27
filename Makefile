@@ -18,9 +18,13 @@ build:
 dev: clean build
 	docker run \
 	-p $(PORT):8000 \
-	-v $(PWD):/$(project_name) \
 	--name $(project_name) \
 	-ti $(image_name) $(CMD)
 
 detach:
 	docker run -d -p $(PORT):8000 --name $(project_name) $(image_name)
+
+deploy: build
+	docker run \
+	-v $(HOME)/.ssh:/root/.ssh \
+	-ti $(image_name) mkdocs gh-deploy
