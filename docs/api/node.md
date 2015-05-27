@@ -5,8 +5,8 @@ can be deployed.
 
 Attribute   | Description
 ----------- | -----------
-id        | A unique identifier (UUID) for the node generated automatically on creation
-cluster_id  | The cluster UUID of which the node belongs
+id          | A unique identifier (UUID) for the node generated automatically on creation
+cluster     | The cluster UUID of which the node belongs
 name        | A user provided name for the node (see [Regions](/api/regions/))
 labels      | A list of labels to identify the node when running containers (see [Labels](/api/labels/))
 state       | The state of the node. See the below table for a list of possible states
@@ -28,7 +28,7 @@ List all nodes avalaible. Returns a list of `Node` objects.
 
 ### HTTP Request
 
-`GET /api/v1/nodes`
+`GET /api/v1/node`
 
 ### Query Parameters
 
@@ -36,7 +36,7 @@ Parameter   | Description
 ---------   | -----------
 name        | Filter by name
 state       | Filter by state
-cluster_id  | Filter by cluster UUID
+cluster     | Filter by cluster UUID
 region      | Filter by region
 node_size   | Filter by node size
 labels      | Filter by a list of labels (e.g. `[{ "region": "us-east", "environment": "production" }]`)
@@ -55,7 +55,7 @@ Creates a new node.
 
 Parameter | Description
 --------- | -----------
-cluster_id  | (required) Cluster UUID to which the newly created node will belong
+cluster   | (required) Cluster UUID to which the newly created node will belong
 name | (required) Name of the node
 region | (required) The name identifier of the region where the node will be deployed (see [Regions](/api/regions))
 node_size | (required) Name identifier of the node size object desired for the node (see [Node Sizes](/api/node_sizes))

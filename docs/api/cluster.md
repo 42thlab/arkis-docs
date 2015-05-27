@@ -10,8 +10,10 @@ id          | A unique identifier (UUID) for the cluster generated automatically
 name        | A user provided name for the cluster
 token       | Token key to reach the cluster
 strategy    | Strategy for ranking the node (see [Strategies](https://docs.docker.com/swarm/scheduler/strategy/))
+state       | State of the cluster
+notice      | User-friendly informations about the state of the cluster
 nodes_count | The number of containers present in the cluster
-node_ids    | A list of resource UUID of `Node` objects present in the cluster
+nodes    | A list of resource UUID of `Node` objects present in the cluster
 containers_count | The number of containers present in the cluster
 created_at  | The date and time when this cluster was created
 updated_at  | The date and time when this cluster was updated last
@@ -22,7 +24,7 @@ List all clusters avalaible. Returns a list of `Cluster` objects.
 
 ### HTTP Request
 
-`GET /api/v1/clusters`
+`GET /api/v1/cluster`
 
 ### Query Parameters
 
@@ -30,6 +32,7 @@ Parameter   | Description
 ---------   | -----------
 name        | Filter by cluster name
 strategy    | Filter by strategy
+state       | Filter by state
 limit       | Limits the number of returned objects (by defauts returns all records)
 page        | Returns one page of records at a time (by default, sets the `limit` parameter to 10)
 
@@ -61,7 +64,7 @@ Get all the informations of a specific cluster.
 
 Parameter | Description
 --------- | -----------
-uuid | The UUID of the cluster to retrieve
+id | The UUID of the cluster to retrieve
 
 ## Destroy a cluster
 
@@ -75,4 +78,4 @@ Destroy all the nodes in a cluster and the cluster itself. This is irreversible.
 
 Parameter | Description
 --------- | -----------
-uuid | The UUID of the cluster to retrieve
+id | The UUID of the cluster to retrieve
