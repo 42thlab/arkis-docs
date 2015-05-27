@@ -58,7 +58,7 @@ Parameter | Description
 cluster  | (required) Cluster UUID to which the newly created node will belong
 name | (required) Name of the node
 region | (required) The name identifier of the region where the node will be deployed (see [Regions](/api/regions))
-node_size | (required) name identifier of the node size object desired for the node (see [Node Sizes](/api/node_sizes))
+node_size | (required) Name identifier of the node size object desired for the node (see [Node Sizes](/api/node_sizes))
 labels | (optional) List of labels to identify the node (see [Labels](/api/labels))
 
 ### Get an existing node
