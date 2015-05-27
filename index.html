@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="ContainerHQ, Inc">
-        <link rel="canonical" href="/api/">
-        <link rel="shortcut icon" href="../img/favicon.ico">
+        <link rel="canonical" href="/">
+        <link rel="shortcut icon" href="./img/favicon.ico">
 
-	<title>Home - Arkis Documentation</title>
+	<title>Arkis Documentation</title>
 
-        <link href="../css/bootstrap-3.0.3.min.css" rel="stylesheet">
-        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/highlight.css">
-        <link href="../css/base.css" rel="stylesheet">
+        <link href="./css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+        <link href="./css/base.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="..">Arkis Documentation</a>
+            <a class="navbar-brand" href=".">Arkis Documentation</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -50,38 +50,38 @@
             <ul class="nav navbar-nav">
             
             
-                <li >
-                    <a href="..">Home</a>
+                <li class="active">
+                    <a href=".">Home</a>
                 </li>
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Api <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="cluster/">Cluster</a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href="./">Home</a>
+                            <a href="api/cluster/">Cluster</a>
                         </li>
                     
                         <li >
-                            <a href="labels/">Labels</a>
+                            <a href="api/">Home</a>
                         </li>
                     
                         <li >
-                            <a href="node/">Node</a>
+                            <a href="api/labels/">Labels</a>
                         </li>
                     
                         <li >
-                            <a href="node_sizes/">Node sizes</a>
+                            <a href="api/node/">Node</a>
                         </li>
                     
                         <li >
-                            <a href="regions/">Regions</a>
+                            <a href="api/node_sizes/">Node sizes</a>
+                        </li>
+                    
+                        <li >
+                            <a href="api/regions/">Regions</a>
                         </li>
                     
                     </ul>
@@ -93,13 +93,13 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 
-                <li >
-                    <a rel="next" href="cluster/">
+                <li class="disabled">
+                    <a rel="next" >
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="labels/">
+                    <a rel="prev" href="api/cluster/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -122,33 +122,14 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#introduction">Introduction</a></li>
-        
-            <li><a href="#docker-api">Docker API</a></li>
+        <li class="main active"><a href="#arkis-documentation">Arkis Documentation</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="introduction">Introduction</h1>
-<p><strong>Arkis</strong> currently offers a <strong>HTTP REST API</strong> wich is used by the Web UI. In this
-document you will find all API operations currently supported in the service
-and examples on how to execute them.</p>
-<h2 id="docker-api">Docker API</h2>
-<p><strong>Arkis</strong> is fully compatible with both
-<a href="https://docs.docker.com/reference/api/docker_remote_api/">Docker API</a> and
-<a href="http://docs.docker.com/swarm/API/">Docker Swarm API</a>.</p>
-<p>You can reach our Docker API through the following hostname:</p>
-<pre><code>https://api.arkis.io
-</code></pre>
-<p>Or to reach a specific Docker API version:</p>
-<pre><code>https://api.arkis.io/v1.18
-</code></pre>
-<p>However, in order to target your cluster running on <strong>Arkis</strong>, you must specify
-your cluster's <strong>token</strong> by adding to all requests sent to this endpoints the
-following <code>Authorization</code> header:</p>
-<p><code>Authorization: Token username:token</code></p></div>
+<h1 id="arkis-documentation">Arkis Documentation</h1></div>
         </div>
 
 	<footer class="col-md-12">
@@ -161,9 +142,9 @@ following <code>Authorization</code> header:</p>
 
         
 
-        <script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script>
-        <script src="../js/base.js"></script>
+        <script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script>
+        <script src="./js/base.js"></script>
     </body>
 </html>

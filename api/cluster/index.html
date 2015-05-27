@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="ContainerHQ, Inc">
+        <link rel="canonical" href="/api/cluster/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Cluster - Arkis Documentation</title>
+
+        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Arkis Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Api <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href="./">Cluster</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../">Home</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../labels/">Labels</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../node/">Node</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../node_sizes/">Node sizes</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../regions/">Regions</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../..">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="http://github.com/42thlab/arkis-docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#cluster">Cluster</a></li>
+        
+            <li><a href="#attributes">Attributes</a></li>
+        
+            <li><a href="#list-all-clusters">List all clusters</a></li>
+        
+            <li><a href="#create-a-new-cluster">Create a new cluster</a></li>
+        
+            <li><a href="#destroy-a-cluster">Destroy a cluster</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="cluster">Cluster</h1>
+<p>A cluster is a group of nodes wich are on the same private network.</p>
+<h3 id="attributes">Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>A unique identifier (UUID) for the cluster generated automatically on creation</td>
+</tr>
+<tr>
+<td>name</td>
+<td>A user provided name for the cluster</td>
+</tr>
+<tr>
+<td>token</td>
+<td>Token key to reach the cluster</td>
+</tr>
+<tr>
+<td>strategy</td>
+<td>Strategy for ranking the node (see <a href="https://docs.docker.com/swarm/scheduler/strategy/">Strategies</a>)</td>
+</tr>
+<tr>
+<td>state</td>
+<td>State of the cluster</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>User-friendly informations about the state of the cluster</td>
+</tr>
+<tr>
+<td>nodes_count</td>
+<td>The number of containers present in the cluster</td>
+</tr>
+<tr>
+<td>nodes</td>
+<td>A list of resource UUID of <code>Node</code> objects present in the cluster</td>
+</tr>
+<tr>
+<td>containers_count</td>
+<td>The number of containers present in the cluster</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>The date and time when this cluster was created</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>The date and time when this cluster was updated last</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list-all-clusters">List all clusters</h2>
+<p>List all clusters avalaible. Returns a list of <code>Cluster</code> objects.</p>
+<h3 id="http-request">HTTP Request</h3>
+<p><code>GET /api/v1/cluster</code></p>
+<h3 id="query-parameters">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Filter by cluster name</td>
+</tr>
+<tr>
+<td>strategy</td>
+<td>Filter by strategy</td>
+</tr>
+<tr>
+<td>state</td>
+<td>Filter by state</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Limits the number of returned objects (by defauts returns all records)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Returns one page of records at a time (by default, sets the <code>limit</code> parameter to 10)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create-a-new-cluster">Create a new cluster</h2>
+<p>Creates a new cluster without deploying it.</p>
+<h3 id="http-request_1">HTTP Request</h3>
+<p><code>POST /api/v1/cluster</code></p>
+<h3 id="json-parameters">JSON Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>(required) A user provided name for the cluster</td>
+</tr>
+<tr>
+<td>strategy</td>
+<td>(required) A user provided strategy for the cluster (e.g. <code>spread</code>, <code>binpack</code> or <code>random</code>)</td>
+</tr>
+<tr>
+<td>nodes</td>
+<td>(required) A list of <code>Node</code> objects for the cluster (must have at least one node)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-an-existing-cluster">Get an existing cluster</h3>
+<p>Get all the informations of a specific cluster.</p>
+<h3 id="http-request_2">HTTP Request</h3>
+<p><code>GET /api/v1/cluster/:id/</code></p>
+<h3 id="query-parameters_1">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The UUID of the cluster to retrieve</td>
+</tr>
+</tbody>
+</table>
+<h2 id="destroy-a-cluster">Destroy a cluster</h2>
+<p>Destroy all the nodes in a cluster and the cluster itself. This is irreversible.</p>
+<h3 id="http-request_3">HTTP Request</h3>
+<p><code>DELETE /api/v1/cluster/:id/</code></p>
+<h3 id="query-parameters_2">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The UUID of the cluster to retrieve</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+	<footer class="col-md-12">
+		<hr>
+		
+		<p>Copyright &copy; ContainerHQ, Inc</p>
+		
+		<p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+	</footer>
+
+        
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>
