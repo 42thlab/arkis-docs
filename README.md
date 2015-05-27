@@ -46,7 +46,7 @@ To deploy the application on [GitHub Pages](https://pages.github.com/):
 
     make deploy
 
->Caution: You need push access to the targeted repository to deploy this
+>**Caution!** You need push access to the targeted repository to deploy this
 documentation. The path `$HOME/.ssh` is mounted inside the container with
 a volume for that purpose.
 
