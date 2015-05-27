@@ -42,7 +42,8 @@ The documentation should be running on your Docker host and available at:
     http://$(your-docker-ip):$PORT
 
 You can run the documentation server on another port of your Docker host
-by specifying the environment variable `PORT` (default: `8000`).
+by specifying the environment variable `PORT` (default: `8000`) before any
+of the previous commands (except clean).
 
 ### Deploy the documentation on [GitHub Pages](https://pages.github.com/)
 
