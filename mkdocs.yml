@@ -9,6 +9,3 @@ copyright: Copyright &copy; ContainerHQ, Inc
 theme: bootstrap
 
 dev_addr: '0.0.0.0:8000'
-
-pages:
-- ['api/index.md', 'API', 'Introduction']
