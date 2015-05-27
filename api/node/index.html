@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="ContainerHQ, Inc">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Node - Arkis Documentation</title>
+
+        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Arkis Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Api <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../cluster/">Cluster</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../">Home</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../labels/">Labels</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Node</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../node_sizes/">Node sizes</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../regions/">Regions</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../labels/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../node_sizes/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="http://github.com/42thlab/arkis-docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#node">Node</a></li>
+        
+            <li><a href="#list-all-nodes">List all nodes</a></li>
+        
+            <li><a href="#create-a-new-node">Create a new node</a></li>
+        
+            <li><a href="#destroy-a-cluster">Destroy a cluster</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="node">Node</h1>
+<p>A node is a docker machine provided by a cloud provider where docker containers
+can be deployed.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uuid</td>
+<td>A unique identifier for the node generated automatically on creation</td>
+</tr>
+<tr>
+<td>cluster</td>
+<td>The cluster UUID of which the node belongs</td>
+</tr>
+<tr>
+<td>name</td>
+<td>A user provided name for the node (see <a href="../../api/regions">Regions</a>)</td>
+</tr>
+<tr>
+<td>labels</td>
+<td>A list of labels to identify the node when running containers (see <a href="../../api/labels">Labels</a>)</td>
+</tr>
+<tr>
+<td>state</td>
+<td>The state of the node. See the below table for a list of possible states</td>
+</tr>
+<tr>
+<td>fqdn</td>
+<td>An automatically generated FQDN for the node</td>
+</tr>
+<tr>
+<td>public_ip</td>
+<td>The public IP of the node</td>
+</tr>
+<tr>
+<td>region</td>
+<td>The UUID of the region where the node is deployed</td>
+</tr>
+<tr>
+<td>node_size</td>
+<td>The identifier of the size of the node (see <a href="../../api/node_sizes">Node Sizes</a>)</td>
+</tr>
+<tr>
+<td>cpu</td>
+<td>Number of CPU's core</td>
+</tr>
+<tr>
+<td>disk</td>
+<td>Storage size in GB</td>
+</tr>
+<tr>
+<td>memory</td>
+<td>Memory in MB</td>
+</tr>
+<tr>
+<td>docker_version</td>
+<td>Docker's version used in the node</td>
+</tr>
+<tr>
+<td>containers_count</td>
+<td>The actual number of containers in the node</td>
+</tr>
+<tr>
+<td>deployed_at</td>
+<td>The date and time when this node was deployed</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>The date and time when this node was updated last</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list-all-nodes">List all nodes</h2>
+<p>List all nodes avalaible. Returns a list of <code>Node</code> objects.</p>
+<h3 id="http-request">HTTP Request</h3>
+<p><code>GET /api/v1/nodes</code></p>
+<h3 id="query-parameters">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Filter by name</td>
+</tr>
+<tr>
+<td>state</td>
+<td>Filter by state</td>
+</tr>
+<tr>
+<td>cluster</td>
+<td>Filter by cluster UUID</td>
+</tr>
+<tr>
+<td>region</td>
+<td>Filter by region</td>
+</tr>
+<tr>
+<td>node_size</td>
+<td>Filter by node size</td>
+</tr>
+<tr>
+<td>labels</td>
+<td>Filter by a list of labels (e.g. <code>[{ "region": "us-east", "environment": "production" }]</code>)</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Limits the number of returned objects (by defauts returns all records)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Returns one page of records at a time (by default, sets the <code>limit</code> parameter to 10)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create-a-new-node">Create a new node</h2>
+<p>Creates a new node.</p>
+<h3 id="http-request_1">HTTP Request</h3>
+<p><code>POST /api/v1/node</code></p>
+<h3 id="json-parameters">JSON Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cluster</td>
+<td>(required) Cluster UUID to which the newly created node will belong</td>
+</tr>
+<tr>
+<td>name</td>
+<td>(required) Name of the node</td>
+</tr>
+<tr>
+<td>region</td>
+<td>(required) The UUID of the region where the node will be deployed (see <a href="../../api/regions">Regions</a>)</td>
+</tr>
+<tr>
+<td>node_size</td>
+<td>(required) Size of that the node will have after deployment (see <a href="../../api/node_sizes">Node Sizes</a>)</td>
+</tr>
+<tr>
+<td>labels</td>
+<td>(optional) List of labels to identify the node (see <a href="../../api/labels">Labels</a>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-an-existing-node">Get an existing node</h3>
+<p>Get all the informations of a specific node.</p>
+<h3 id="http-request_2">HTTP Request</h3>
+<p><code>GET /api/v1/node/:uuid/</code></p>
+<h3 id="query-parameters_1">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uuid</td>
+<td>The UUID of the node to retrieve</td>
+</tr>
+</tbody>
+</table>
+<h2 id="destroy-a-cluster">Destroy a cluster</h2>
+<p>Remove a node from the cluster and destroy the node itself. This is irreversible.</p>
+<h3 id="http-request_3">HTTP Request</h3>
+<p><code>DELETE /api/v1/node/:uuid/</code></p>
+<h3 id="query-parameters_2">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uuid</td>
+<td>The UUID of the node to retrieve</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+	<footer class="col-md-12">
+		<hr>
+		
+		<p>ContainerHQ, Inc - All rights reserved</p>
+		
+		<p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+	</footer>
+
+        
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>
