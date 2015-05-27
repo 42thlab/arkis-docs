@@ -35,6 +35,8 @@ is [Docker](http://www.docker.com) and [Make](http://www.gnu.org/software/make/)
 
     CMD=/bin/bash make dev
 
+### Open the documentation
+
 The documentation should be running on your Docker host and available at:
 
     http://$(your-docker-ip):$PORT
