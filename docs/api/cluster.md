@@ -11,7 +11,7 @@ name        | A user provided name for the cluster
 token       | Token key to reach the cluster
 strategy    | Strategy for ranking the node (see [Strategies](https://docs.docker.com/swarm/scheduler/strategy/))
 state       | State of the cluster
-notice      | User-friendly informations about the state of the cluster
+state_message | User-friendly informations about the state of the cluster
 nodes_count | The number of containers present in the cluster
 nodes    | A list of resource UUID of `Node` objects present in the cluster
 containers_count | The number of containers present in the cluster

@@ -10,6 +10,7 @@ cluster     | The cluster UUID of which the node belongs
 name        | A user provided name for the node (see [Regions](/api/regions/))
 labels      | A list of labels to identify the node when running containers (see [Labels](/api/labels/))
 state       | The state of the node. See the below table for a list of possible states
+state_message | User-friendly informations about the state of the node
 fqdn        | An automatically generated FQDN for the node
 public_ip   | The public IP of the node
 region      | The name identifier of the region where the node is deployed
