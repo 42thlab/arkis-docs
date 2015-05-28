@@ -14,6 +14,7 @@ fqdn        | An automatically generated FQDN for the node
 public_ip   | The public IP of the node
 region      | The name identifier of the region where the node is deployed
 node_size   | The name identifier of the node size object of this node (see [Node Sizes](/api/node_sizes/))
+master      | Whether the node is the master of its cluster
 cpu         | Number of CPU's core
 disk        | Storage size in GB
 memory      | Memory in MB
@@ -38,6 +39,7 @@ name        | Filter by name
 state       | Filter by state
 cluster     | Filter by cluster UUID
 region      | Filter by region
+master      | Filter all master nodes
 node_size   | Filter by node size
 labels      | Filter by a list of labels (e.g. `[{ "region": "us-east", "environment": "production" }]`)
 limit       | Limits the number of returned objects (by defauts returns all records)
