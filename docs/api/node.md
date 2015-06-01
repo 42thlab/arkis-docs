@@ -20,7 +20,6 @@ cpu         | Number of CPU's core
 disk        | Storage size in GB
 memory      | Memory in MB
 docker_version | Docker's version used in the node
-containers_count | The actual number of containers in the node
 deployed_at | The date and time when this node was deployed
 updated_at  | The date and time when this node was updated last
 
