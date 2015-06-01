@@ -1,6 +1,6 @@
 # Arkis Documentation
 
-**Arkis** documentation is available online [here](http://42thlab.github.io/arkis-docs/).
+**Arkis** documentation is available online [here](http://containerhq.github.io/arkis-docs/).
 
 This documentation is written using
 [Markdown](https://guides.github.com/features/mastering-markdown/).
