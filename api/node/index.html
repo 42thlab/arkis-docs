@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="ContainerHQ, Inc">
-        <link rel="canonical" href="/api/node/">
+        
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
 	<title>Node - Arkis Documentation</title>
@@ -59,6 +59,10 @@
                 <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Api <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../authentication/">Authentication</a>
+                        </li>
                     
                         <li >
                             <a href="../cluster/">Cluster</a>
@@ -167,6 +171,10 @@ can be deployed.</p>
 <td>The state of the node. See the below table for a list of possible states</td>
 </tr>
 <tr>
+<td>state_message</td>
+<td>User-friendly informations about the state of the node</td>
+</tr>
+<tr>
 <td>fqdn</td>
 <td>An automatically generated FQDN for the node</td>
 </tr>
@@ -183,6 +191,10 @@ can be deployed.</p>
 <td>The name identifier of the node size object of this node (see <a href="../../api/node_sizes/">Node Sizes</a>)</td>
 </tr>
 <tr>
+<td>master</td>
+<td>Whether the node is the master of its cluster</td>
+</tr>
+<tr>
 <td>cpu</td>
 <td>Number of CPU's core</td>
 </tr>
@@ -197,10 +209,6 @@ can be deployed.</p>
 <tr>
 <td>docker_version</td>
 <td>Docker's version used in the node</td>
-</tr>
-<tr>
-<td>containers_count</td>
-<td>The actual number of containers in the node</td>
 </tr>
 <tr>
 <td>deployed_at</td>
@@ -240,6 +248,10 @@ can be deployed.</p>
 <tr>
 <td>region</td>
 <td>Filter by region</td>
+</tr>
+<tr>
+<td>master</td>
+<td>Filter all master nodes</td>
 </tr>
 <tr>
 <td>node_size</td>
