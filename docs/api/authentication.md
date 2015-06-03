@@ -19,7 +19,11 @@ is required for every API call:
 
     Accept: application/json
 
-### Get a JSON Web Token
+### Sign up / Sign in
+
+Create an account and returns the JSON Web Token of this account.
+If this account already exist and the credentials are corrects,
+returns the JSON Web Token of the existing account.
 
 ### HTTP Request
 
