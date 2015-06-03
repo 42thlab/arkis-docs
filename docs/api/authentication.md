@@ -22,7 +22,7 @@ is required for every API call:
 ### Sign up / Sign in
 
 Create an account and returns the JSON Web Token of this account.
-If this account already exist and the credentials are corrects,
+If the account already exist and the credentials are corrects,
 returns the JSON Web Token of the existing account.
 
 ### HTTP Request
