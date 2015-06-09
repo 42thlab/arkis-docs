@@ -76,7 +76,7 @@ Parameter | Description
 --------- | -----------
 id | The UUID of the node to retrieve
 
-## Destroy a cluster
+## Destroy a node
 
 Remove a node from the cluster and destroy the node itself. This is irreversible.
 
