@@ -7,13 +7,13 @@ Attribute   | Description
 ----------- | -----------
 id          | A unique identifier (UUID) for the node generated automatically on creation
 cluster     | The cluster UUID of which the node belongs
-name        | A user provided name for the node (see [Regions](/api/regions/))
+name        | A user provided name for the node
 labels      | A list of labels to identify the node when running containers (see [Labels](/api/labels/))
 state       | The state of the node. See the below table for a list of possible states
 state_message | User-friendly informations about the state of the node
 fqdn        | An automatically generated FQDN for the node
 public_ip   | The public IP of the node
-region      | The name identifier of the region where the node is deployed
+region      | The name identifier of the region where the node is deployed (see [Regions](/api/regions/))
 node_size   | The name identifier of the node size object of this node (see [Node Sizes](/api/node_sizes/))
 master      | Whether the node is the master of its cluster
 cpu         | Number of CPU's core
@@ -35,7 +35,6 @@ List all nodes avalaible. Returns a list of `Node` objects.
 
 Parameter   | Description
 ---------   | -----------
-name        | Filter by name
 state       | Filter by state
 cluster     | Filter by cluster UUID
 region      | Filter by region
