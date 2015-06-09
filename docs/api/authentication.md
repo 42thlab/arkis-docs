@@ -14,6 +14,9 @@ following `Authorization` header:
 
     Authorization: JWT JSON_WEB_TOKEN_STRING
 
+>N.B. Authentication endpoints (starting with `/auth`) are available without this
+header.
+
 HTTP responses are given in JSON format, so the following `Accept` header
 is required for every API call:
 
@@ -27,7 +30,7 @@ returns the JSON Web Token of the existing account.
 
 ### HTTP Request
 
-`POST /api/v1/login`
+`POST /api/v1/auth/login`
 
 ### JSON Parameters
 
